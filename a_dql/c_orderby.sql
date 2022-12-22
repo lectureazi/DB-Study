@@ -21,5 +21,37 @@ from employee
 order by bonus is null asc, bonus asc;
 
 
+# TOP N 구문
+# 쿼리의 결과중 상위 N개의 결과만 받아보는 구문
+# limit
+# limit start idx, 출력할 개수
+# limit 5 == limit 0, 5
+
+# employee 테이블에서 급여 순위 1~5등을 뽑아보자
+select 
+emp_name, salary 
+from employee
+order by salary desc
+limit 0,5;
+
+# employee 테이블에서 급여순위 6~10등을 뽑아보자
+select 
+emp_name, salary 
+from employee
+order by salary desc
+limit 5,5;
+
+# employee 테이블에서 가장 최근에 입사한 사원 5명을 뽑아보자.
+select 
+emp_name, salary, hire_date 
+from employee
+order by hire_date desc
+limit 0,5;
+
+
+
+
+
+
 
 
